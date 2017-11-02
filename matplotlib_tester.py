@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-from matplotlib.axes import Axes
-
-
-def print_ax_objects(ax, lines=True, title=True, axis_labels=True, plot_labes=True):
+def print_ax(ax, lines=True, title=True, axis_labels=True, plot_labes=True):
     # Проверяем, что холст существует
-    if not isinstance(ax, Axes):
+    if 'Axes' not in ax.__class__.__name__:
         print('Переменная ax задана неверно. Должна быть команда вида `fig, ax = plt.subplots()`.')
         return
     if lines:
